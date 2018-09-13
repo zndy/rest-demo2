@@ -41,7 +41,6 @@ public class CoinChangerController {
     public SseEmitter handleCoinInsert() {
         SseEmitter emitter = new SseEmitter();
         this.emitters.add(emitter);
-
         emitter.onCompletion(() -> this.emitters.remove(emitter));
         emitter.onTimeout(() -> this.emitters.remove(emitter));
 
